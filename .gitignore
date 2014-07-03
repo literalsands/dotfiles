@@ -1,0 +1,21 @@
+# No Folders
+*/
+
+# Only dotfiles
+[^.]*
+
+# No History Files
+.*_history
+.lesshst
+.dbshell
+
+# No Keyrings
+.*_keyring
+
+# None of these.
+.*info
+.zsh-update
+.CFUserTextEncoding
+.meteorsession
+.zcompdump*
+

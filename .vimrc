@@ -127,7 +127,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Evernote and other app plugins.
 Bundle "kakkyz81/evervim"
-let g:evervim_devtoken="S=s43:U=4a9f60:E=148c4a877d4:C=1416cf74bd8:P=1cd:A=en-devtoken:V=2:H=51b03a9505febaafd790f59aa8e70784"
 
 set wrap
 set linebreak

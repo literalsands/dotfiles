@@ -48,8 +48,12 @@ Bundle "slim-template/vim-slim.git"
 Bundle "timcharper/textile.vim.git"
 Bundle "tpope/vim-haml"
 Bundle "wavded/vim-stylus"
+
 " Handlebars
 Bundle "nono/vim-handlebars"
+Bundle "Slava/vim-spacebars"
+" Ignore errors caused by 'template' tags.
+let g:syntastic_html_tidy_ignore_errors=["template"]
 
 " Git related...
 Bundle "gregsexton/gitv"
@@ -78,6 +82,7 @@ Bundle "terryma/vim-multiple-cursors"
 
 " Smooth Scrolling
 Bundle "terryma/vim-smooth-scroll"
+
 " General vim improvements
 Bundle "MarcWeber/vim-addon-mw-utils.git"
 Bundle "bogado/file-line.git"
@@ -91,6 +96,7 @@ Bundle "skwp/YankRing.vim"
 Bundle "skwp/greplace.vim"
 "Bundle "rson/vim-conque"
 "Bundle "skwp/vim-conque"
+Bundle "oplatek/Conque-Shell"
 Bundle "tomtom/tlib_vim.git"
 Bundle "tpope/vim-abolish"
 Bundle "tpope/vim-endwise.git"

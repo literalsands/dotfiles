@@ -51,3 +51,4 @@ source $ZSH/oh-my-zsh.sh
 export ADT_PATH=/usr/local/opt/android-sdk
 export PATH=$ADT_PATH/tools:$ADT_PATH/platform-tools:$PATH
 
+source /usr/local/opt/nvm/nvm.sh

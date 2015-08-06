@@ -53,7 +53,8 @@ Bundle "wavded/vim-stylus"
 Bundle "nono/vim-handlebars"
 Bundle "Slava/vim-spacebars"
 " Ignore errors caused by 'template' tags.
-let g:syntastic_html_tidy_ignore_errors=["template"]
+let g:syntastic_html_tidy_ignore_errors=["template","unexpected <body>"]
+
 
 " Git related...
 Bundle "gregsexton/gitv"
@@ -155,9 +156,12 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
+set incsearch
 
 set mouse=a
 
+set guioptions-=r
+set guioptions-=L
 set background=dark
 let iterm_profile=$ITERM_PROFILE
 if iterm_profile=='Solarized Light'

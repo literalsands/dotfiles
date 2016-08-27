@@ -49,4 +49,5 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export ADT_PATH=/usr/local/opt/android-sdk
+export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=$ADT_PATH/tools:$ADT_PATH/platform-tools:$PATH

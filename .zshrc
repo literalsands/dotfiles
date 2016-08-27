@@ -49,6 +49,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export ADT_PATH=/usr/local/opt/android-sdk
+export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=$ADT_PATH/tools:$ADT_PATH/platform-tools:$PATH
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
 
-source /usr/local/opt/nvm/nvm.sh
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

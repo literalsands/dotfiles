@@ -21,38 +21,25 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle "gmarik/vundle"
+Bundle "sheerun/vim-polyglot"
 
 " Ruby, Rails, Rake...
 Bundle "tpope/vim-rails.git"
 Bundle "tpope/vim-rake.git"
 Bundle "tpope/vim-rvm.git"
-Bundle "vim-ruby/vim-ruby.git"
 Bundle "vim-scripts/Specky.git"
 Bundle "ck3g/vim-change-hash-syntax"
 
-" Other languages
-Bundle "briancollins/vim-jst"
-Bundle "pangloss/vim-javascript"
-
 " Html, Xml, Css, Markdown...
 Bundle "aaronjensen/vim-sass-status.git"
-Bundle "claco/jasmine.vim"
 Bundle "digitaltoad/vim-jade.git"
-Bundle "groenewege/vim-less.git"
 Bundle "itspriddle/vim-jquery.git"
 Bundle "jtratner/vim-flavored-markdown.git"
-Bundle "kchmck/vim-coffee-script"
-Bundle "mtscout6/vim-cjsx"
 Bundle "nelstrom/vim-markdown-preview"
 Bundle "skwp/vim-html-escape"
 Bundle "slim-template/vim-slim.git"
-Bundle "timcharper/textile.vim.git"
-Bundle "tpope/vim-haml"
-Bundle "wavded/vim-stylus"
-
-" Handlebars
-Bundle "nono/vim-handlebars"
 Bundle "Slava/vim-spacebars"
+
 " Ignore errors caused by 'template' tags.
 let g:syntastic_html_tidy_ignore_errors=["template","unexpected <body>"]
 
@@ -63,7 +50,6 @@ Bundle "mattn/gist-vim"
 Bundle "skwp/vim-git-grep-rails-partial"
 Bundle "tjennings/git-grep-vim"
 Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-git"
 
 " General text editing improvements...
 Bundle "AndrewRadev/splitjoin.vim"
@@ -88,7 +74,7 @@ Bundle "terryma/vim-smooth-scroll"
 " General vim improvements
 Bundle "MarcWeber/vim-addon-mw-utils.git"
 Bundle "bogado/file-line.git"
-Bundle "kien/ctrlp.vim"
+Bundle "ctrlpvim/ctrlp.vim"
 Bundle "majutsushi/tagbar.git"
 Bundle "mattn/webapi-vim.git"
 Bundle "rking/ag.vim"

@@ -22,6 +22,8 @@ call vundle#rc()
 
 Bundle "gmarik/vundle"
 Bundle "sheerun/vim-polyglot"
+Bundle "kchmck/vim-coffee-script"
+Bundle "mtscout6/vim-cjsx"
 
 " Ruby, Rails, Rake...
 Bundle "tpope/vim-rails.git"
@@ -40,8 +42,6 @@ Bundle "skwp/vim-html-escape"
 Bundle "slim-template/vim-slim.git"
 Bundle "Slava/vim-spacebars"
 
-" Ignore errors caused by 'template' tags.
-let g:syntastic_html_tidy_ignore_errors=["template","unexpected <body>"]
 
 
 " Git related...
@@ -75,12 +75,13 @@ Bundle "terryma/vim-smooth-scroll"
 Bundle "MarcWeber/vim-addon-mw-utils.git"
 Bundle "bogado/file-line.git"
 Bundle "ctrlpvim/ctrlp.vim"
+
 Bundle "majutsushi/tagbar.git"
 Bundle "mattn/webapi-vim.git"
 Bundle "rking/ag.vim"
 Bundle "scrooloose/syntastic.git"
 Bundle "sjl/gundo.vim"
-Bundle "skwp/YankRing.vim"
+"Bundle "skwp/YankRing.vim"
 Bundle "skwp/greplace.vim"
 "Bundle "rson/vim-conque"
 "Bundle "skwp/vim-conque"
@@ -155,3 +156,14 @@ if iterm_profile=='Solarized Light'
   set background=light
 endif
 colorscheme solarized
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_switch_buffer = 'et'
+"set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux"
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" Set the right syntax checkers for React.
+let g:syntastic_javascript_checkers = ['eslint']
+" Ignore errors caused by 'template' tags.
+let g:syntastic_html_tidy_ignore_errors=["template","unexpected <body>"]

@@ -10,12 +10,12 @@ set autoread
 set hidden
 
 syntax on
+filetype off
 
 set noswapfile
 set nobackup
 set nowb
 
-filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -155,3 +155,5 @@ if iterm_profile=='Solarized Light'
   set background=light
 endif
 colorscheme solarized
+
+filetype plugin indent on

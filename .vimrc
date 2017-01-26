@@ -168,3 +168,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 let g:syntastic_javascript_checkers = ['eslint']
 " Ignore errors caused by 'template' tags.
 let g:syntastic_html_tidy_ignore_errors=["template","unexpected <body>"]
+" Bold descriptions and it statements in mocha.js tests.
+highlight MochaTestDescribeIt cterm=bold
+match MochaTestDescribeIt /\(^\|\s\+\)\(it\|describe\)("\zs.*\ze"/
+

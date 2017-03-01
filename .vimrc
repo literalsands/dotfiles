@@ -115,7 +115,7 @@ Bundle "vim-scripts/argtextobj.vim"
 
 " Cosmetics, color scheme, Powerline...
 Bundle "vim-scripts/TagHighlight.git"
-Bundle "chrisbra/color_highlight.git"
+Bundle "chrisbra/Colorizer"
 Bundle "altercation/vim-colors-solarized"
 Bundle "bling/vim-airline"
 let g:airline#extensions#tabline#enabled = 1
@@ -162,6 +162,11 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 'et'
 "set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux"
+" Sane Ignore For ctrlp
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 " Set the right syntax checkers for React.
 let g:syntastic_javascript_checkers = ['eslint']

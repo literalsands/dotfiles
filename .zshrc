@@ -43,15 +43,16 @@ fi
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails common-aliases git textmate ruby lighthouse)
-plugins=(brew compleat gem git git-extras github lol meteor mvn node npm nyan osx per-directory-history pip pylint python rails rand-quote ruby sublime sudo tmux web-search wd)
+plugins=(brew compleat gem git git-extras github meteor mvn node npm nyan osx per-directory-history pip pylint python rails ruby sublime sudo tmux web-search wd)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# Add ADT
 export ADT_PATH=/usr/local/opt/android-sdk
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=$ADT_PATH/tools:$ADT_PATH/platform-tools:$PATH
+
 export NVM_DIR="$HOME/.nvm"
-. "$(brew --prefix nvm)/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

@@ -11,8 +11,10 @@ if [ "$ITERM_PROFILE" = "Solarized Light" ]; then
 fi
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
+alias node="nodejs"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vim="nvim"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -43,16 +45,17 @@ fi
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails common-aliases git textmate ruby lighthouse)
-plugins=(brew compleat gem git git-extras github lol meteor mvn node npm nyan osx per-directory-history pip pylint python rails rand-quote ruby sublime sudo tmux web-search wd)
+plugins=(compleat gem git git-extras github lol meteor mvn node npm nyan osx per-directory-history pip pylint python rails rand-quote ruby sublime sudo tmux web-search wd)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export ADT_PATH=/usr/local/opt/android-sdk
 export ANDROID_HOME=/usr/local/opt/android-sdk
-export PATH=$ADT_PATH/tools:$ADT_PATH/platform-tools:$PATH
+export GOPATH=/home/austin/local/go
+export PATH=$ADT_PATH/tools:$ADT_PATH/platform-tools:$PATH:$GOPATH/bin
 
-export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
 export NVM_DIR="/home/austin/.nvm"

@@ -24,6 +24,8 @@ Bundle "gmarik/vundle"
 Bundle "sheerun/vim-polyglot"
 Bundle "kchmck/vim-coffee-script"
 Bundle "mtscout6/vim-cjsx"
+Bundle "pangloss/vim-javascript"
+Bundle "mxw/vim-jsx"
 
 " Ruby, Rails, Rake...
 Bundle "tpope/vim-rails.git"
@@ -41,7 +43,6 @@ Bundle "nelstrom/vim-markdown-preview"
 Bundle "skwp/vim-html-escape"
 Bundle "slim-template/vim-slim.git"
 Bundle "Slava/vim-spacebars"
-
 
 
 " Git related...
@@ -83,8 +84,6 @@ Bundle "scrooloose/syntastic.git"
 Bundle "sjl/gundo.vim"
 "Bundle "skwp/YankRing.vim"
 Bundle "skwp/greplace.vim"
-"Bundle "rson/vim-conque"
-"Bundle "skwp/vim-conque"
 Bundle "oplatek/Conque-Shell"
 Bundle "tomtom/tlib_vim.git"
 Bundle "tpope/vim-abolish"
@@ -168,7 +167,15 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 let g:syntastic_javascript_checkers = ['eslint']
 " Ignore errors caused by 'template' tags.
 let g:syntastic_html_tidy_ignore_errors=["template","unexpected <body>"]
+let g:jsx_ext_required = 1 " Allow JSX in normal JS files
 " Bold descriptions and it statements in mocha.js tests.
+highlight MatchParen ctermfg=10 ctermbg=8 cterm=bold
+highlight Search ctermbg=8 ctermfg=10
 highlight MochaTestDescribeIt cterm=bold
-match MochaTestDescribeIt /\(^\|\s\+\)\(it\|describe\)("\zs.*\ze"/
+"highlight MochaTestSkip ctermbg=8 cterm=bold
+augroup MochaHighlighting
+  autocmd!
+  autocmd VimEnter,WinEnter *spec.js syntax match MochaTestDescribeIt /\(^\|\s\+\)\(it\|describe\)("\zs.*\ze"/
+  "autocmd VimEnter,WinEnter *spec.js syntax match MochaTestSkip /\(^\|\s\+\)\(it\|describe\)\.skip("\zs.*\ze"/
+augroup END
 

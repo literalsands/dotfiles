@@ -117,8 +117,11 @@ Bundle "vim-scripts/argtextobj.vim"
 Bundle "vim-scripts/TagHighlight.git"
 Bundle "chrisbra/Colorizer"
 Bundle "altercation/vim-colors-solarized"
-Bundle "bling/vim-airline"
+Bundle "mhartington/oceanic-next"
+Bundle "vim-airline/vim-airline-themes"
+Bundle "vim-airline/vim-airline"
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='solarized'
 
 " Evernote and other app plugins.
 Bundle "kakkyz81/evervim"
@@ -155,7 +158,6 @@ let iterm_profile=$ITERM_PROFILE
 if iterm_profile=='Solarized Light'
   set background=light
 endif
-colorscheme solarized
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -172,3 +174,25 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 let g:syntastic_javascript_checkers = ['eslint']
 " Ignore errors caused by 'template' tags.
 let g:syntastic_html_tidy_ignore_errors=["template","unexpected <body>"]
+
+colorscheme solarized
+
+" Set solarized to working.
+let g:solarized_termcolors=16 " color depth
+let g:solarized_termtrans=0 " 1|0 background transparent
+let g:solarized_bold=1 " 1|0 show bold fonts
+let g:solarized_italic=1 " 1|0 show italic fonts
+let g:solarized_underline=0 " 1|0 show underlines
+let g:solarized_contrast="normal" " normal|high|low contrast
+let g:solarized_visibility="normal" " normal|high|low effect on whitespace characters
+
+hi jsThis cterm=italic ctermfg=1
+hi jsClassDefinition cterm=italic,bold ctermfg=4
+hi jsClassFuncName cterm=italic,bold ctermfg=4
+hi jsHtmlElemFuncs cterm=italic,bold ctermfg=4
+hi jsFuncName cterm=italic,bold ctermfg=4
+
+hi htmlArg gui=italic cterm=italic
+hi Comment gui=italic cterm=italic
+hi Type    gui=italic cterm=italic
+

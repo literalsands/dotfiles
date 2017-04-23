@@ -114,10 +114,13 @@ Bundle "vim-scripts/argtextobj.vim"
 
 " Cosmetics, color scheme, Powerline...
 Bundle "vim-scripts/TagHighlight.git"
-Bundle "chrisbra/color_highlight.git"
+Bundle "chrisbra/Colorizer"
 Bundle "altercation/vim-colors-solarized"
-Bundle "bling/vim-airline"
+Bundle "mhartington/oceanic-next"
+Bundle "vim-airline/vim-airline-themes"
+Bundle "vim-airline/vim-airline"
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='solarized'
 
 " Evernote and other app plugins.
 Bundle "kakkyz81/evervim"
@@ -154,7 +157,6 @@ let iterm_profile=$ITERM_PROFILE
 if iterm_profile=='Solarized Light'
   set background=light
 endif
-colorscheme solarized
 
 filetype plugin indent on
 let g:ctrlp_map = '<c-p>'
@@ -162,12 +164,20 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 'et'
 "set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux"
+" Sane Ignore For ctrlp
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 " Set the right syntax checkers for React.
 let g:syntastic_javascript_checkers = ['eslint']
 " Ignore errors caused by 'template' tags.
 let g:syntastic_html_tidy_ignore_errors=["template","unexpected <body>"]
 let g:jsx_ext_required = 1 " Allow JSX in normal JS files
+
+colorscheme solarized
+
 " Bold descriptions and it statements in mocha.js tests.
 highlight MatchParen ctermfg=10 ctermbg=8 cterm=bold
 highlight Search ctermbg=8 ctermfg=10
@@ -178,4 +188,23 @@ augroup MochaHighlighting
   autocmd VimEnter,WinEnter *spec.js syntax match MochaTestDescribeIt /\(^\|\s\+\)\(it\|describe\)("\zs.*\ze"/
   "autocmd VimEnter,WinEnter *spec.js syntax match MochaTestSkip /\(^\|\s\+\)\(it\|describe\)\.skip("\zs.*\ze"/
 augroup END
+
+" Set solarized to working.
+let g:solarized_termcolors=16 " color depth
+let g:solarized_termtrans=0 " 1|0 background transparent
+let g:solarized_bold=1 " 1|0 show bold fonts
+let g:solarized_italic=1 " 1|0 show italic fonts
+let g:solarized_underline=0 " 1|0 show underlines
+let g:solarized_contrast="normal" " normal|high|low contrast
+let g:solarized_visibility="normal" " normal|high|low effect on whitespace characters
+
+hi jsThis cterm=italic ctermfg=1
+hi jsClassDefinition cterm=italic,bold ctermfg=4
+hi jsClassFuncName cterm=italic,bold ctermfg=4
+hi jsHtmlElemFuncs cterm=italic,bold ctermfg=4
+hi jsFuncName cterm=italic,bold ctermfg=4
+
+hi htmlArg gui=italic cterm=italic
+hi Comment gui=italic cterm=italic
+hi Type    gui=italic cterm=italic
 

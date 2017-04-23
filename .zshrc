@@ -49,14 +49,15 @@ plugins=(compleat gem git git-extras github lol meteor mvn node npm nyan osx per
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# Add ADT
 export ADT_PATH=/usr/local/opt/android-sdk
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export GOPATH=/home/austin/local/go
 export PATH=$ADT_PATH/tools:$ADT_PATH/platform-tools:$PATH:$GOPATH/bin
 
+export NVM_DIR="/usr/local/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
-export NVM_DIR="/home/austin/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

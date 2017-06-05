@@ -122,6 +122,8 @@ Bundle "vim-airline/vim-airline"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='solarized'
 
+Bundle "sbdchd/neoformat"
+
 " Evernote and other app plugins.
 Bundle "kakkyz81/evervim"
 
@@ -182,11 +184,11 @@ colorscheme solarized
 highlight MatchParen ctermfg=10 ctermbg=8 cterm=bold
 highlight Search ctermbg=8 ctermfg=10
 highlight MochaTestDescribeIt cterm=bold
-"highlight MochaTestSkip ctermbg=8 cterm=bold
+highlight MochaTestSkip ctermbg=8 cterm=bold
 augroup MochaHighlighting
   autocmd!
   autocmd VimEnter,WinEnter *spec.js syntax match MochaTestDescribeIt /\(^\|\s\+\)\(it\|describe\)("\zs.*\ze"/
-  "autocmd VimEnter,WinEnter *spec.js syntax match MochaTestSkip /\(^\|\s\+\)\(it\|describe\)\.skip("\zs.*\ze"/
+  autocmd VimEnter,WinEnter *spec.js syntax match MochaTestSkip /\(^\|\s\+\)\(it\|describe\)\.skip("\zs.*\ze"/
 augroup END
 
 " Set solarized to working.

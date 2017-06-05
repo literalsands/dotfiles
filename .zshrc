@@ -12,7 +12,6 @@ fi
 
 # Example aliases
 alias zshconfig="nvim ~/.zshrc"
-alias node="nodejs"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
 
@@ -57,6 +56,7 @@ export PATH=$ADT_PATH/tools:$ADT_PATH/platform-tools:$PATH:$GOPATH/bin
 
 export NVM_DIR="/usr/local/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+nvm use default
 
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '

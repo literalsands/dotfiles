@@ -39,25 +39,39 @@ alias vim="nvim"
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
 # much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails common-aliases git textmate ruby lighthouse)
-plugins=(compleat gem git git-extras github lol meteor mvn node npm nyan osx per-directory-history pip pylint python rails rand-quote ruby sublime sudo tmux web-search wd)
+plugins=(autoenv compleat gem git git-extras github meteor node npm osx per-directory-history pip pylint python rails ruby sudo tmux web-search wd)
 
 source $ZSH/oh-my-zsh.sh
 
-# Add ADT
+# Add ADT (Android Development Toolkit) to path.
 export ADT_PATH=/usr/local/opt/android-sdk
 export ANDROID_HOME=/usr/local/opt/android-sdk
+export GCLOUD_PATH=/usr/local/lib/gcloud/google-cloud-sdk/bin
+export PATH=$ADT_PATH/tools:$ADT_PATH/platform-tools:$PATH:$GOPATH/bin:~/Library/Python/3.5/bin:$GCLOUD_PATH
+
+# Go package path.
 export GOPATH=/home/austin/local/go
-export PATH=$ADT_PATH/tools:$ADT_PATH/platform-tools:$PATH:$GOPATH/bin
 
+# NVM (Node Version Manager)
 export NVM_DIR="/usr/local/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-nvm use default
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Less code highlighting.
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
+# Enable autoenv '.env.leave' config files.
+export AUTOENV_ENABLE_LEAVE="yes"
+
+# Set default google credentials to Focusini.
+export GOOGLE_APPLICATION_CREDENTIALS=/Users/austin/.keyfiles/Focusini-5e64b41553f8.json
+
+# Iterm integration.
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

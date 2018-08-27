@@ -43,6 +43,7 @@ Bundle "nelstrom/vim-markdown-preview"
 Bundle "skwp/vim-html-escape"
 Bundle "slim-template/vim-slim.git"
 Bundle "Slava/vim-spacebars"
+Bundle "projectfluent/fluent.vim"
 
 
 " Git related...
@@ -177,6 +178,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 " Ignore errors caused by 'template' tags.
 let g:syntastic_html_tidy_ignore_errors=["template","unexpected <body>"]
 let g:jsx_ext_required = 1 " Allow JSX in normal JS files
+let g:javascript_plugin_jsdoc = 1 " Syntax highlighting for JSDoc
 
 colorscheme solarized
 
